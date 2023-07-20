@@ -24,5 +24,6 @@ service:
   targetPort: 3000
 
 ingress:
+  port: 80
   path: /auth
   pathType: Prefix
