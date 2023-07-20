@@ -5,7 +5,7 @@ containerPort: 3000
 
 image:
   repository: harunaga113/authenticate-service
-  tag: "latest"
+  tag: latest
 
 metadata:
   name: authenticate-service

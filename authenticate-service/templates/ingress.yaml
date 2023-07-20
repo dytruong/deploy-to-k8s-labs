@@ -6,10 +6,10 @@ spec:
   rules:
   - http:
       paths:
-      - path: {{ .Value.ingress.path }}
-        pathType: {{ .Value.ingress.pathType }}
+      - path: {{ .Values.ingress.path }}
+        pathType: {{ .Values.ingress.pathType }}
         backend:
           service:
-            name: {{ .Value.service.name }}
+            name: {{ .Values.service.name }}
             port:
-              number: {{ .Value.service.port }}
+              number: {{ .Values.service.port }}
