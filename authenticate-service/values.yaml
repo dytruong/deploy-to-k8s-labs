@@ -1,16 +1,16 @@
-replicaCount: 3
+replicaCount: 2
 
-containerName: k8s-web-to-nginx
+containerName: authenticate-service
 containerPort: 3000
 
 image:
-  repository: harunaga113/k8s-web-to-nginx
-  tag: "1.0.1"
+  repository: harunaga113/authenticate-service
+  tag: "1.0.0"
 
 metadata:
-  name: k8s-web-to-nginx
+  name: authenticate-service
   labels:
-    app: k8s-web-to-nginx
+    app: authenticate-service
 
 resources:
   limits:
@@ -18,6 +18,12 @@ resources:
     memory: 128Mi
 
 service:
+  name: authenticate-service
   type: ClusterIP
-  port: 3333
+  port: 9000
   targetPort: 3000
+
+ingress:
+  className: authenticate-ingress
+  path: /auth
+  pathType: Prefix
