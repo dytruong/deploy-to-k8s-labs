@@ -2,6 +2,7 @@ replicaCount: 2
 
 containerName: authenticate-service
 containerPort: 3000
+namespace: authenticate-service
 
 image:
   repository: harunaga113/authenticate-service
@@ -19,11 +20,11 @@ resources:
 
 service:
   name: authenticate-service
-  type: NodePort
+  type: ClusterIP
   port: 8000
   targetPort: 3000
 
 ingress:
-  port: 8000
+  host: 192.168.49.2
   path: /auth/
   pathType: Prefix
