@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: {{ .Values.metadata.name }}
   annotations:
-    kubernetes.io/ingress.class: "ingress-nginx"
+    kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
   - http:
