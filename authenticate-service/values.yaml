@@ -24,6 +24,5 @@ service:
   targetPort: 3000
 
 ingress:
-  className: authenticate-ingress
   path: /auth
   pathType: Prefix
